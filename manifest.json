@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Euro Quick Quote",
+  "version": "2.0.0",
+  "description": "Quick European stock quotes from Euronext (Portugal, France, Netherlands), Xetra (Germany), BME (Spain) and more. Top 3 daily gainers/losers. No API key required.",
+  "author": "Elton Santos",
+  "homepage_url": "https://eltonmelosantos.com.br",
+  "action": {
+    "default_title": "Euro Quick Quote",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://query1.finance.yahoo.com/*",
+    "https://query2.finance.yahoo.com/*"
+  ]
+}

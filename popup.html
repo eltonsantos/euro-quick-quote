@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Euro Quick Quote</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <img class="logo" src="icon48.png" alt="Euro Quick Quote" />
+      <div class="brand-text">
+        <div class="brand-title">Euro Quick Quote</div>
+        <div class="brand-subtitle">European Stocks • Euronext & More</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="card card-search">
+      <label class="label" for="ticker">Ticker (Symbol.Exchange)</label>
+      <div class="row">
+        <input id="ticker" class="input" type="text" inputmode="latin" autocomplete="off" spellcheck="false"
+          placeholder="e.g. GALP.LS, ASML.AS, SAP.DE" />
+        <button id="btnSearch" class="btn" type="button">Search</button>
+      </div>
+      <div class="exchange-help">
+        <span class="help-title">Exchange suffixes:</span>
+        <span class="help-item"><strong>.LS</strong> Portugal</span>
+        <span class="help-item"><strong>.PA</strong> France</span>
+        <span class="help-item"><strong>.AS</strong> Netherlands</span>
+        <span class="help-item"><strong>.DE</strong> Germany</span>
+        <span class="help-item"><strong>.MC</strong> Spain</span>
+        <span class="help-item"><strong>.MI</strong> Italy</span>
+      </div>
+    </section>
+
+    <section class="card card-quote">
+      <div class="card-title">Quote</div>
+      <div id="quoteState" class="state">Enter a ticker and click Search.</div>
+
+      <div id="quoteBox" class="quote hidden">
+        <div class="quote-top">
+          <div>
+            <div id="qSymbol" class="q-symbol">—</div>
+            <div id="qName" class="q-name">—</div>
+            <div id="qExchange" class="q-exchange">—</div>
+          </div>
+          <div class="q-pricebox">
+            <div id="qPrice" class="q-price">—</div>
+            <div id="qChange" class="q-change neutral">—</div>
+          </div>
+        </div>
+
+        <div class="quote-grid">
+          <div class="kv"><div class="k">Open</div><div id="qOpen" class="v">—</div></div>
+          <div class="kv"><div class="k">High (D)</div><div id="qHigh" class="v">—</div></div>
+          <div class="kv"><div class="k">Low (D)</div><div id="qLow" class="v">—</div></div>
+          <div class="kv"><div class="k">Volume</div><div id="qVol" class="v">—</div></div>
+        </div>
+
+        <div class="quote-footer">
+          <div id="qTime" class="q-time">—</div>
+          <button id="btnRefresh" class="btn btn-ghost" type="button">Refresh</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card card-tops">
+      <div class="tops-head">
+        <div class="card-title">Top 3 Gainers & Losers</div>
+        <button id="btnLoadTops" class="btn btn-ghost" type="button">Load</button>
+      </div>
+
+      <div id="topsState" class="state">Click "Load" to see Top 3 European Stocks and ETFs.</div>
+
+      <div id="topsBox" class="tops hidden">
+        <div class="tops-grid">
+          <div class="tops-col">
+            <div class="tops-title">STOCKS • Gainers</div>
+            <div id="stocksGainers" class="list"></div>
+            <div class="tops-title tops-title-spaced">STOCKS • Losers</div>
+            <div id="stocksLosers" class="list"></div>
+          </div>
+
+          <div class="tops-col">
+            <div class="tops-title">ETFs • Gainers</div>
+            <div id="fiisGainers" class="list"></div>
+            <div class="tops-title tops-title-spaced">ETFs • Losers</div>
+            <div id="fiisLosers" class="list"></div>
+          </div>
+        </div>
+
+        <div class="mini-note">
+          Note: Top 3 is calculated from a curated list of liquid European assets. Does not represent the entire market.
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <a class="link" href="privacy.html" target="_blank" rel="noreferrer">Privacy</a>
+      <span class="dot">•</span>
+      <a class="link" href="https://finance.yahoo.com" target="_blank" rel="noreferrer">Data: Yahoo Finance</a>
+    </section>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
